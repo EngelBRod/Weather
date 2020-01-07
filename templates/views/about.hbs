@@ -10,8 +10,24 @@
     <body>
         
         {{>header}}
-       
-        <p>This site  uses data from mapbox.com and darksky.com</p>
+        <section>
+            <div class="container d-flex justify-content-center align-items-center h-50">
+                <div class="row">
+                    <div class="col-12   text-center py-4">
+                        <p class="display-4" id="about">
+                            This site was created by {{name}}
+                            </br>
+                            and uses data from
+                            </br>
+                            Mapbox.com and Darksky.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>        
 
         {{>footer}}
     </body>
