@@ -1,0 +1,99 @@
+<!DOCTYPE html lang=en>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/styles.css"/>
+        <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="./css/normalize.css"/>
+        <title>WeatherApp</title>
+       
+    </head>
+    <body>
+        {{>header}}
+
+        <section >
+            <div class="container h-75 " >
+                <div class="row d-flex justify-content-center">
+
+                    <div class="col-10 d-flex flex-column  justify-content-center align-items-center ">
+                       
+                        <form class="w-100 d-flex  justify-content-center align-items-center py-5">
+                            <input class="w-100" id="input">
+                            <button class="btn btn-primary" id="button">search</button>
+                        </form>
+                       
+
+                    </div><!--col-->
+                </div><!--row-->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12 d-flex align-items-center">
+                                <h2 class="py-2" id="location"></h2>
+                                <figure id="day_condition">
+                                    
+                                    <figcaption></figcaption>
+                                </figure>
+
+
+                            </div><!--col-->
+
+                        </div><!--row-->
+                        <h2 class="py-2" id="location"></h2>
+                        <div class="row d-flex justify-content-between py-5">
+                            <div class="col-2 text-center">
+                                <p class="icon_info" id="temperature_info"></p>
+                                <figure>
+                                    <img class="icon" id="temperature" src="./img/thermometer.png"/>
+                                    <figcaption></figcaption>
+                                </figure>
+                               
+                                <p class="icon_label" id="temperature_label">Temperature</p>
+
+                            </div><!--col-->
+                             <div class="col-2 text-center">
+                                <p class="icon_info" id="humidity_info"></p>
+                                <figure>
+                                    <img class="icon" id="temperature" src="./img/humidity.png"/>
+                                    <figcaption></figcaption>
+                                </figure>
+                                
+                                <p class="icon_label" id="temperature_label">Humidity</p>
+
+                            </div><!--col-->
+                             <div class="col-2 align-content-between text-center">
+                                <p class="icon_info" id="windSpeed_info"></p>
+                                <figure>
+                                    <img class="icon" id="temperature" src="./img/wind.png"/>
+                                    <figcaption></figcaption>
+                                </figure>
+                                
+                                <p class="icon_label" id="temperature_label">Wind Speed</p>
+
+                            </div><!--col-->
+                             <div class="col-2 text-center">
+                                <p class="icon_info" id="precipitation_info"></p>
+                                <figure>
+                                    <img class="icon" id="temperature" src="./img/storm.png"/>
+                                    <figcaption></figcaption>
+                                </figure>
+                                
+                                <p class="icon_label" id="temperature_label">Precipitation Probability</p>
+
+                            </div><!--col-->
+                        </div><!--row-->
+                        <h3 id='info'> </h3>
+
+                    </div><!--col-->
+
+                </div><!--row-->
+            </div><!--container-->   
+                        
+        </section><!--section-->
+   
+      
+          
+        {{>footer}}
+
+         <script src="/js/app.js"></script>
+    </body>
+</html>
