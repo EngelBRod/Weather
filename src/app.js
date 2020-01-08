@@ -10,33 +10,35 @@ const {geocode}= require('./utils/geocode');
 
 const app = express()
 
-//App port
+//APP PORT
+
 const port = process.env.PORT
 
-//Define paths for Express config
+//DEFINE PATHS FOR EXPRESS CONFIG 
+
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath= path.join(__dirname,'../templates/partials')
 
-//Setup handlebars engine and views location
+//SETUP HANDLEBARS ENGINE AND VIEWS LOCATION
 app.set('view engine', 'hbs');
 app.set('views',viewsPath);
 hbs.registerPartials(partialsPath)
 
-//Setup static directory to serve
+//SETUP STATIC DIRECTORY TO SERVER 
 app.use(express.static(publicDirectoryPath))
 
 
 //ROUTES
 
-//Home route
+//HOME ROUTE
 app.get('',(req,res)=>{
     res.render('index',{
         title:'Weather',
         name: 'Engel Rodriguez'
     })
 })
-//About route
+//ABOUT ROUTE
 app.get('/about',(req,res)=>{
     res.render('about',
     {
@@ -45,7 +47,7 @@ app.get('/about',(req,res)=>{
 
     })
 })
-//Help route
+//HELP ROUTE
 app.get('/help',(req,res)=>{
 
     res.render('help',{
@@ -54,22 +56,9 @@ app.get('/help',(req,res)=>{
         name:'Engel Rodriguez'
     })
 })
-// app.get('',(req,res)=>{
-//     res.send('Hello express!')
-// })
-// app.get('/help',(req,res)=>{
-//     res.send({
-//         name:'Andrew',
-//         age:27
-//     }
-//     )
-// })
 
-// app.get('/about',(req,res)=>{
-//     res.send('<h1>About page</h1>')
-// });
+//WEATHER ROUTE
 
-//Weather route
 app.get('/weather', (req,res)=>{
 
 
@@ -109,7 +98,8 @@ app.get('/weather', (req,res)=>{
    
 })
 
-//Products route
+//PRODUCTS ROUTE
+
 app.get('/products',(req,res)=>{
 
     if(!req.query.search){
@@ -123,13 +113,13 @@ app.get('/products',(req,res)=>{
     })
 })
 
-//Help route
+//HELP ROUTE
 app.get('/help/*',(req, res)=>{
     res.render('error',{
         errorMessage:'Help article not found'
     })
 })
-//Not found route
+//NOT FOUND ROUTE
 app.get('*',(req,res)=>{
     
     res.render('error',{

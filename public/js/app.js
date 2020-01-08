@@ -1,3 +1,6 @@
+
+//DOM VARIABLES DECLARATION 
+
 const wform=document.querySelector('form');
 const info= document.querySelector('#info');
 const locationD= document.querySelector('#location');
@@ -7,9 +10,13 @@ const windSpeedInfo= document.querySelector('#windSpeed_info');
 const precipitationInfo =document.querySelector('#precipitation_info');
 const summary =document.querySelector('#summary_info');
 const dayCondition= document.querySelector('#day_condition')
+const location= document.querySelector('input');
 
+//EVENT LISTENERS
 
 wform.addEventListener('submit',processForm);
+
+//CREATING HTML ELEMENTS
 
 const p= document.createElement('p');
 const h2= document.createElement('h2');
@@ -17,12 +24,15 @@ const img=document.createElement('img');
 
 img.classList.add('icon_condition')
 
+//FUNCTION TO CONSULT WEATHER
 
 function processForm(e){
 
     e.preventDefault();
-    const location= document.querySelector('input');
+    
     console.log(location.value);
+    //FETCHING WEATHER
+
     fetch(`/weather?address=${location.value}`)
     .then((response)=>{
     return response.json()
@@ -38,10 +48,12 @@ function processForm(e){
    const icon= data.icon;
    img.src=`./img/${icon}.png`
       
-                   
+     
+   //INSERTING WEATHER VALUES INTO  HTML IF SEARCHING PARAMETERS ARE VALID
+
    if(wlocation!==undefined){
 
-    locationD.innerHTML=`${wlocation}`
+   locationD.innerHTML=`${wlocation}`
    temperatureInfo.innerHTML=`${temperature} C`
    humidityInfo.innerHTML=`${humidity * 100} %`
    windSpeedInfo.innerHTML=`${windSpeed} k/h`
