@@ -33,7 +33,7 @@ function processForm(e){
    const temperature= data.temperature;
    const windSpeed=data.windSpeed.toFixed(1);
    const summary =data.summary;
-   const humidity =data.humidity;
+   const humidity =data.humidity.toFixed(1);
    const precipitation=data.precipitation.toFixed(1);
    const icon= data.icon;
    img.src=`./img/${icon}.png`
