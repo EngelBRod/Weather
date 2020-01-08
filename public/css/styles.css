@@ -70,6 +70,23 @@ section{
 footer{
     
     color:#fff;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
     
+}
+
+
+@media only screen and (max-width:767px){
+    
+    footer{
+    
+      
+        position:relative;
+        font-size:0.5em;
+        width: 100%;
+        
+    }
+
 }
 
