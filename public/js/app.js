@@ -10,7 +10,7 @@ const windSpeedInfo= document.querySelector('#windSpeed_info');
 const precipitationInfo =document.querySelector('#precipitation_info');
 const summary =document.querySelector('#summary_info');
 const dayCondition= document.querySelector('#day_condition')
-const location= document.querySelector('input');
+
 
 //EVENT LISTENERS
 
@@ -29,6 +29,7 @@ img.classList.add('icon_condition')
 function processForm(e){
 
     e.preventDefault();
+    const location= document.querySelector('input');
     
     console.log(location.value);
     //FETCHING WEATHER
